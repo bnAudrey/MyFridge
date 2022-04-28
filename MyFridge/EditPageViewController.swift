@@ -11,12 +11,11 @@ class EditPageViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+    }
 
-        // Do any additional setup after loading the view.
+    @IBAction func cancelButtonPressed(_ sender: Any) {
+        self.dismiss(animated: true)
     }
     
-    @IBAction func canceEdit(_ sender: Any) {
-    }
     
-
 }

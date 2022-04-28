@@ -22,7 +22,7 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         collectionView.dataSource = self
 //        var itemDetail = ItemDetail(itemName: "Roasted Peanut", location: "kitchen", total: 3)
 //        items.append(itemDetail)
-        
+
         let context = appDelegate.persistentContainer.viewContext
         do {
             let data = Fridge.fetchRequest()
@@ -53,6 +53,17 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         var cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! CustomCollectionViewCell
         cell.self.layer.cornerRadius = 10
+        
+        cell.layer.shadowColor = UIColor(
+            red: 0.11,
+            green: 0.11,
+            blue: 0.11,
+            alpha: 0.15).cgColor
+        cell.layer.shadowOffset = CGSize(width: 1, height: 2)
+        cell.layer.shadowRadius = 3
+        cell.layer.shadowOpacity = 1.0
+        cell.layer.masksToBounds = false
+        
         cell.itemName.text = items[indexPath.row].itemName
         cell.location.text = items[indexPath.row].location
         cell.total.text = "\(items[indexPath.row].total!)"
@@ -107,6 +118,8 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return items.count
     }
+    
+    
     
     @IBAction func unwindToHome(_ unwindSegue: UIStoryboardSegue) {
         let sourceViewController = unwindSegue.source
