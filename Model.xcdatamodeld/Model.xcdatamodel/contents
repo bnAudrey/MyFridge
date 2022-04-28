@@ -4,9 +4,9 @@
         <attribute name="datePicker" optional="YES" attributeType="String"/>
         <attribute name="itemName" optional="YES" attributeType="String"/>
         <attribute name="location" optional="YES" attributeType="String"/>
-        <attribute name="total" optional="YES" attributeType="String"/>
+        <attribute name="total" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
     </entity>
     <elements>
-        <element name="Fridge" positionX="-54" positionY="-9" width="128" height="89"/>
+        <element name="Fridge" positionX="-63" positionY="-18" width="128" height="89"/>
     </elements>
 </model>
